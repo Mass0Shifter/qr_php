@@ -1,0 +1,62 @@
+[29-Sep-2020 21:14:51 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'pl1v7epfosxp'@'localhost' (using password: YES) in /home/pl1v7epfosxp/public_html/waoms/inc/database.php on line 13
+[29-Sep-2020 21:20:46 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, bool given in /home/pl1v7epfosxp/public_html/waoms/inc/database.php on line 34
+[29-Sep-2020 21:20:46 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, bool given in /home/pl1v7epfosxp/public_html/waoms/inc/database.php on line 34
+[29-Sep-2020 21:20:46 UTC] PHP Notice:  Undefined variable: found in /home/pl1v7epfosxp/public_html/waoms/public/leave_application.php on line 177
+[29-Sep-2020 21:20:46 UTC] PHP Notice:  Undefined variable: found in /home/pl1v7epfosxp/public_html/waoms/public/leave_application.php on line 272
+[29-Sep-2020 21:20:46 UTC] PHP Notice:  Undefined variable: found in /home/pl1v7epfosxp/public_html/waoms/public/leave_application.php on line 356
+[06-Oct-2020 12:14:27 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, bool given in /home/pl1v7epfosxp/public_html/waoms/inc/database.php on line 34
+[06-Oct-2020 12:14:27 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, bool given in /home/pl1v7epfosxp/public_html/waoms/inc/database.php on line 34
+[06-Oct-2020 12:14:27 UTC] PHP Notice:  Undefined variable: found in /home/pl1v7epfosxp/public_html/waoms/public/leave_application.php on line 177
+[06-Oct-2020 12:14:27 UTC] PHP Notice:  Undefined variable: found in /home/pl1v7epfosxp/public_html/waoms/public/leave_application.php on line 272
+[06-Oct-2020 12:14:27 UTC] PHP Notice:  Undefined variable: found in /home/pl1v7epfosxp/public_html/waoms/public/leave_application.php on line 356
+[06-Oct-2020 12:15:26 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, bool given in /home/pl1v7epfosxp/public_html/waoms/inc/database.php on line 34
+[06-Oct-2020 12:15:26 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, bool given in /home/pl1v7epfosxp/public_html/waoms/inc/database.php on line 34
+[06-Oct-2020 12:15:26 UTC] PHP Notice:  Undefined variable: found_day in /home/pl1v7epfosxp/public_html/waoms/public/leave_review.php on line 150
+[06-Oct-2020 12:15:26 UTC] PHP Notice:  Undefined variable: found_week in /home/pl1v7epfosxp/public_html/waoms/public/leave_review.php on line 192
+[06-Oct-2020 12:15:49 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, bool given in /home/pl1v7epfosxp/public_html/waoms/inc/database.php on line 34
+[06-Oct-2020 12:15:49 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, bool given in /home/pl1v7epfosxp/public_html/waoms/inc/database.php on line 34
+[06-Oct-2020 12:15:49 UTC] PHP Notice:  Undefined variable: found_day in /home/pl1v7epfosxp/public_html/waoms/public/leave_review.php on line 150
+[06-Oct-2020 12:15:49 UTC] PHP Notice:  Undefined variable: found_week in /home/pl1v7epfosxp/public_html/waoms/public/leave_review.php on line 192
+[07-Oct-2020 02:59:30 UTC] PHP Notice:  Undefined variable: user in /home/pl1v7epfosxp/public_html/waoms/public/client_requests_ongoing_client.php on line 3
+[07-Oct-2020 02:59:30 UTC] PHP Notice:  Trying to get property 'status' of non-object in /home/pl1v7epfosxp/public_html/waoms/public/client_requests_ongoing_client.php on line 3
+[19-Oct-2020 17:13:44 UTC] PHP Notice:  Undefined index: stage in /home/pl1v7epfosxp/public_html/waoms/public/client_nhf_view.php on line 95
+[19-Oct-2020 17:13:44 UTC] PHP Notice:  Undefined index: stage in /home/pl1v7epfosxp/public_html/waoms/public/client_nhf_view.php on line 100
+[19-Oct-2020 17:13:44 UTC] PHP Notice:  Undefined index: stage in /home/pl1v7epfosxp/public_html/waoms/public/client_nhf_view.php on line 105
+[19-Oct-2020 17:13:44 UTC] PHP Notice:  Undefined index: stage in /home/pl1v7epfosxp/public_html/waoms/public/client_nhf_view.php on line 110
+[19-Oct-2020 17:13:44 UTC] PHP Notice:  Undefined index: stage in /home/pl1v7epfosxp/public_html/waoms/public/client_nhf_view.php on line 115
+[19-Oct-2020 17:13:44 UTC] PHP Notice:  Undefined index: stage in /home/pl1v7epfosxp/public_html/waoms/public/client_nhf_view.php on line 182
+[19-Oct-2020 17:13:44 UTC] PHP Notice:  Undefined index: stage in /home/pl1v7epfosxp/public_html/waoms/public/client_nhf_view.php on line 182
+[19-Oct-2020 17:13:44 UTC] PHP Notice:  Undefined index: stage in /home/pl1v7epfosxp/public_html/waoms/public/client_nhf_view.php on line 182
+[19-Oct-2020 17:13:44 UTC] PHP Notice:  Undefined index: stage in /home/pl1v7epfosxp/public_html/waoms/public/client_nhf_view.php on line 182
+[19-Oct-2020 17:13:44 UTC] PHP Notice:  Undefined index: stage in /home/pl1v7epfosxp/public_html/waoms/public/client_nhf_view.php on line 182
+[19-Oct-2020 17:13:44 UTC] PHP Notice:  Undefined index: stage in /home/pl1v7epfosxp/public_html/waoms/public/client_nhf_view.php on line 182
+[19-Oct-2020 17:13:44 UTC] PHP Notice:  Undefined index: stage in /home/pl1v7epfosxp/public_html/waoms/public/client_nhf_view.php on line 182
+[19-Oct-2020 17:13:44 UTC] PHP Notice:  Undefined index: stage in /home/pl1v7epfosxp/public_html/waoms/public/client_nhf_view.php on line 182
+[19-Oct-2020 17:15:47 UTC] PHP Notice:  Undefined index: stage in /home/pl1v7epfosxp/public_html/waoms/public/client_nhf_view.php on line 95
+[19-Oct-2020 17:15:47 UTC] PHP Notice:  Undefined index: stage in /home/pl1v7epfosxp/public_html/waoms/public/client_nhf_view.php on line 100
+[19-Oct-2020 17:15:47 UTC] PHP Notice:  Undefined index: stage in /home/pl1v7epfosxp/public_html/waoms/public/client_nhf_view.php on line 105
+[19-Oct-2020 17:15:47 UTC] PHP Notice:  Undefined index: stage in /home/pl1v7epfosxp/public_html/waoms/public/client_nhf_view.php on line 110
+[19-Oct-2020 17:15:47 UTC] PHP Notice:  Undefined index: stage in /home/pl1v7epfosxp/public_html/waoms/public/client_nhf_view.php on line 115
+[19-Oct-2020 17:15:47 UTC] PHP Notice:  Undefined index: stage in /home/pl1v7epfosxp/public_html/waoms/public/client_nhf_view.php on line 182
+[19-Oct-2020 17:15:47 UTC] PHP Notice:  Undefined index: stage in /home/pl1v7epfosxp/public_html/waoms/public/client_nhf_view.php on line 182
+[19-Oct-2020 17:15:47 UTC] PHP Notice:  Undefined index: stage in /home/pl1v7epfosxp/public_html/waoms/public/client_nhf_view.php on line 182
+[19-Oct-2020 17:15:47 UTC] PHP Notice:  Undefined index: stage in /home/pl1v7epfosxp/public_html/waoms/public/client_nhf_view.php on line 182
+[19-Oct-2020 17:15:47 UTC] PHP Notice:  Undefined index: stage in /home/pl1v7epfosxp/public_html/waoms/public/client_nhf_view.php on line 182
+[19-Oct-2020 17:15:47 UTC] PHP Notice:  Undefined index: stage in /home/pl1v7epfosxp/public_html/waoms/public/client_nhf_view.php on line 182
+[19-Oct-2020 17:15:47 UTC] PHP Notice:  Undefined index: stage in /home/pl1v7epfosxp/public_html/waoms/public/client_nhf_view.php on line 182
+[19-Oct-2020 17:15:47 UTC] PHP Notice:  Undefined index: stage in /home/pl1v7epfosxp/public_html/waoms/public/client_nhf_view.php on line 182
+[19-Oct-2020 17:16:48 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, bool given in /home/pl1v7epfosxp/public_html/waoms/inc/database.php on line 34
+[19-Oct-2020 17:16:48 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, bool given in /home/pl1v7epfosxp/public_html/waoms/inc/database.php on line 34
+[19-Oct-2020 17:16:48 UTC] PHP Notice:  Undefined variable: found in /home/pl1v7epfosxp/public_html/waoms/public/leave_application.php on line 177
+[19-Oct-2020 17:16:48 UTC] PHP Notice:  Undefined variable: found in /home/pl1v7epfosxp/public_html/waoms/public/leave_application.php on line 272
+[19-Oct-2020 17:16:48 UTC] PHP Notice:  Undefined variable: found in /home/pl1v7epfosxp/public_html/waoms/public/leave_application.php on line 356
+[19-Oct-2020 21:52:39 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, bool given in /home/pl1v7epfosxp/public_html/waoms/inc/database.php on line 34
+[19-Oct-2020 21:52:39 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, bool given in /home/pl1v7epfosxp/public_html/waoms/inc/database.php on line 34
+[19-Oct-2020 21:52:39 UTC] PHP Notice:  Undefined variable: found_day in /home/pl1v7epfosxp/public_html/waoms/public/leave_review.php on line 150
+[19-Oct-2020 21:52:39 UTC] PHP Notice:  Undefined variable: found_week in /home/pl1v7epfosxp/public_html/waoms/public/leave_review.php on line 192
+[20-Oct-2020 13:58:50 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'waoms'@'localhost' (using password: YES) in /home/pl1v7epfosxp/public_html/waoms/inc/database.php on line 13
+[25-Oct-2020 17:11:48 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, bool given in /home/pl1v7epfosxp/public_html/waoms/inc/database.php on line 34
+[25-Oct-2020 17:11:48 UTC] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, bool given in /home/pl1v7epfosxp/public_html/waoms/inc/database.php on line 34
+[25-Oct-2020 17:11:48 UTC] PHP Notice:  Undefined variable: found in /home/pl1v7epfosxp/public_html/waoms/public/leave_application.php on line 177
+[25-Oct-2020 17:11:48 UTC] PHP Notice:  Undefined variable: found in /home/pl1v7epfosxp/public_html/waoms/public/leave_application.php on line 272
+[25-Oct-2020 17:11:48 UTC] PHP Notice:  Undefined variable: found in /home/pl1v7epfosxp/public_html/waoms/public/leave_application.php on line 356
