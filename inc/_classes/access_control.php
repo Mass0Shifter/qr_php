@@ -7,7 +7,7 @@
  * @author Zero
  *
  */
-$root_to_path = join(DIRECTORY_SEPARATOR, array($_SERVER['DOCUMENT_ROOT'], 'luzcasa-admin', 'inc', 'initialize.php'));
+$root_to_path = join(DIRECTORY_SEPARATOR, array($_SERVER['DOCUMENT_ROOT'], 'qr_php', 'inc', 'initialize.php'));
 require_once($root_to_path);
 
 class AccessControl extends Database_object{
