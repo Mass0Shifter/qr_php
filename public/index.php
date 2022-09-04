@@ -114,7 +114,6 @@ if (isset($_POST["request"])) {
 
         echo json_encode($student);
     }
-
 } else if (isset($_GET["class_list"])) {
     $theRequest = $_GET["class_list"];
     if ($theRequest == "all") {
@@ -127,7 +126,6 @@ if (isset($_POST["request"])) {
 
         echo json_encode($student);
     }
-
 } else if (isset($_GET["attendance"])) {
     $theRequest = $_GET["attendance"];
     if ($theRequest == "all") {
@@ -152,7 +150,28 @@ if (isset($_POST["request"])) {
 
         echo json_encode($student);
     }
-} 
-else {
+} else if (isset($_POST["login"])) {
+
+    $username = trim($_POST['login-username']);
+    $password = trim($_POST['login-password']);
+    $username = strtolower($username);
+    $user_found = Lecturer::verify_user($username, $password);
+
+    if ($user_found) {
+        echo json_encode(
+            [
+                "status" => "success",
+                "id" => $user_found->id
+            ]
+        );
+    } else {
+        echo json_encode(
+            [
+                "status" => "invalid login",
+                "id" => 0
+            ]
+        );
+    }
+} else {
     echo json_encode(["NO DATA POSTED" => "AT ALL"]);
 }
