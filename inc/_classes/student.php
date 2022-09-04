@@ -27,6 +27,7 @@ class Student extends Database_object
         $department                 = '',
         $matric_number               = null,
         $img_src                      = null,
+        // $created_by_id                      = null,
         $date_created              = null;
 
     public function __construct()
