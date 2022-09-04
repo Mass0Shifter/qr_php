@@ -6,9 +6,9 @@
     if(isset($_POST["request"])){
         $theRequest = $_POST["request"];
         if($theRequest == "CREATE STUDENT"){
-            var_dump($_POST);
-            $data = json_decode($_POST["student_data"]);
-            $data = $_POST["student_data"]  ;
+            var_dump($_POST["student_data"]);
+            $data = json_decode($_POST["student_data"]);            
+            var_dump($data);
             $new_student = new Student();
             
             $new_student->first_name = $data["first_name"];
