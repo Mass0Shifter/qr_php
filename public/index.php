@@ -1,5 +1,5 @@
 <?php 
-    require PROJECT_PATH . '../inc/initialize.php';
+    require '../inc/initialize.php';
     require PROJECT_PATH . '/public/file_upload.php';
     header('Content-Type: application/json; charset=utf-8');
 
