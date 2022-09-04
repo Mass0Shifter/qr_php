@@ -16,7 +16,7 @@ class Lecturer extends Database_object{
     protected static $db_table = "lecturers";
     protected static $db_table_fields = array(
         'first_name','middle_name','last_name','email','username','password', 
-        'verified','phone_number','img_id'
+        'verified','phone_number','img_src'
     );
 
     public  $id                     = 0, 
@@ -26,11 +26,9 @@ class Lecturer extends Database_object{
             $email                  = '',
             $username               = '',
             $password               = '',
-            $verified                 = '',
+            $verified               = '',
             $phone_number           = '',
-            // $date_of_birth          = null,
-            $img_id                ='',
-            $created_by_id          = '';
+            $img_src                ='';
 
 
     public function fullName() {
