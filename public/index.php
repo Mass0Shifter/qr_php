@@ -6,9 +6,9 @@
     if(isset($_POST["request"])){
         $theRequest = $_POST["request"];
         if($theRequest == "CREATE STUDENT"){
-            var_dump($_POST["student_data"]);
+            // var_dump($_POST["student_data"]);
             $data = json_decode($_POST["student_data"]);            
-            var_dump($data);
+            // var_dump($data);
             $new_student = new Student();
             
             $new_student->first_name = $data->first_name;
@@ -16,7 +16,7 @@
             $new_student->last_name = $data->last_name;
             $new_student->department = $data->department;
             $new_student->matric_number = $data->matric_number;
-            $new_student->img_src = fileUpload($_FILES['student_img'],  $data->matric_number);
+            $new_student->img_src = fileUpload($_FILES['student_img'],  "");
 
             if($new_student->create()){
                 echo json_encode(
