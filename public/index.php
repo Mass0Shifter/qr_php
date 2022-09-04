@@ -71,12 +71,12 @@
         if($theRequest == "all"){
             $all_students = Student::find_all();
 
-            return json_encode($all_students);
+            echo json_encode($all_students);
         }else if($theRequest == "id"){
             $id = $_GET["id"];
             $student = Student::find_by_id($_GET["id"]);
 
-            return json_encode($student);
+            echo json_encode($student);
         }
     }
 
