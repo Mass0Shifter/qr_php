@@ -17,17 +17,17 @@ class Student extends Database_object
 
     protected static $db_table = "students";
     protected static $db_table_fields = array(
-        'firstName', 'middleName', 'lastName', 'department', 'matricNumber', 'image', 'created_by_id'
+        'first_name', 'middle_name', 'last_name', 'department', 'matric_number', 'img_src', 'date_created'
     );
 
     public $id                      = null,
-        $firstName                  = '',
-        $middleName                 = '',
-        $lastName                   = '',
+        $first_name                  = '',
+        $middle_name                 = '',
+        $last_name                   = '',
         $department                 = '',
-        $matricNumber               = null,
-        $image                      = null,
-        $created_by_id              = null;
+        $matric_number               = null,
+        $img_src                      = null,
+        $date_created              = null;
 
     public function __construct()
     {
