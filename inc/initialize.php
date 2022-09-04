@@ -14,15 +14,14 @@
     require_once('_classes/database_object.php');
     require_once('_classes/access_control.php');
     require_once('_classes/sessions.php');
-    require_once('_classes/user.php');
-    require_once('_classes/client.php');
-    require_once('_classes/property.php');
-    require_once('_classes/sales.php');
-    require_once('_classes/tenants.php');
-    require_once('_classes/property.php');
+    require_once('_classes/lecturer.php');
+    require_once('_classes/attendance.php');
+    require_once('_classes/attendances.php');
+    require_once('_classes/class_list.php');
+    require_once('_classes/student.php');
 
     if(isset($_SESSION['user_id'])){
-        $user = User::find_by_id($_SESSION['user_id']);
+        $user = Lecturer::find_by_id($_SESSION['user_id']);
         $session->login($user);
     }
     

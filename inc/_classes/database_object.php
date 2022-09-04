@@ -110,8 +110,9 @@ class Database_object{
         $sql = " INSERT INTO " . static::$db_table . " (" . implode(",", array_keys($properties)). ") ";
         $sql .= "VALUES ('" . implode("','", array_values($properties)) ."')";
         if($database->query($sql)){
-            $this->id = $database->the_insert_id();
-            return true;
+            // $this->id = $database->the_insert_id();
+            // return true;
+            return $this->id = $database->the_insert_id();
         }else{
             return false;            
         }

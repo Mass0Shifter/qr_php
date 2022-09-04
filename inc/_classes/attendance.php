@@ -11,28 +11,31 @@
 $root_to_path = join(DIRECTORY_SEPARATOR, array($_SERVER['DOCUMENT_ROOT'], 'qr_php', 'inc', 'initialize.php'));
 require_once($root_to_path);
 
-class Student extends Database_object
+class Attendance extends Database_object
 {
     // Template Variables    
 
-    protected static $db_table = "students";
+    protected static $db_table = "attendance";
     protected static $db_table_fields = array(
-        'firstName', 'middleName', 'lastName', 'department', 'matricNumber', 'image', 'created_by_id'
+        'class_id', 'class_count', 'date'
     );
 
     public $id                      = null,
-        $firstName                  = '',
-        $middleName                 = '',
-        $lastName                   = '',
-        $department                 = '',
-        $matricNumber               = null,
-        $image                      = null,
-        $created_by_id              = null;
+        $class_id                   = '',
+        $class                      = '',
+        $class_count                = '',
+        $attendances                = '',
+        $date                       = null;
 
     public function __construct()
     {
     }
 
+
+    public function get_attendances($id)
+    {
+        $this->attendances = Attendances::get_all_attendances_for_id($this->id);
+    }
 
     public static function find_all_by_user_id($id)
     {

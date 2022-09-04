@@ -11,33 +11,29 @@
 $root_to_path = join(DIRECTORY_SEPARATOR, array($_SERVER['DOCUMENT_ROOT'], 'qr_php', 'inc', 'initialize.php'));
 require_once($root_to_path);
 
-class Student extends Database_object
+class Attendances extends Database_object
 {
     // Template Variables    
 
-    protected static $db_table = "students";
+    protected static $db_table = "attendances";
     protected static $db_table_fields = array(
-        'firstName', 'middleName', 'lastName', 'department', 'matricNumber', 'image', 'created_by_id'
+        'attendance_list_id', 'student_id', 'time_record'
     );
 
     public $id                      = null,
-        $firstName                  = '',
-        $middleName                 = '',
-        $lastName                   = '',
-        $department                 = '',
-        $matricNumber               = null,
-        $image                      = null,
-        $created_by_id              = null;
+        $attendance_list_id         = '',
+        $student_id                 = '',
+        $student                    = '',
+        $time_record                = null;
 
     public function __construct()
     {
     }
 
-
-    public static function find_all_by_user_id($id)
+    public static function get_all_attendances_for_id($id)
     {
         global $database;
-        $sql = "SELECT * FROM " . static::$db_table . " WHERE uploaded_by_id=$id";
+        $sql = "SELECT * FROM " . static::$db_table . " WHERE attendance_lis_id=$id ORDER BY time_record ASC";
         $result = self::find_this_query($sql);
 
         if (!empty($result)) {
