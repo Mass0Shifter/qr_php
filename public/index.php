@@ -55,7 +55,7 @@ if (isset($_POST["request"])) {
         }
     }
 
-    if ($theRequest == "CREATE ATTENDANCE LIST") {
+    if ($theRequest == "CREATE ATTENDANCE") {
 
         $data = json_decode($_POST["attendance_data"]);
         $new_attendance_list = new Attendance();
@@ -77,7 +77,7 @@ if (isset($_POST["request"])) {
         }
     }
 
-    if ($theRequest == "CREATE ATTENDANCES LIST") {
+    if ($theRequest == "CREATE ATTENDANCES") {
 
         $data = json_decode($_POST["attendances_data"]);
         $ids = [];
@@ -115,6 +115,45 @@ if (isset($_POST["request"])) {
 
         echo json_encode($student);
     }
-} else {
+
+} else if (isset($_GET["class_list"])) {
+    $theRequest = $_GET["class_list"];
+    if ($theRequest == "all") {
+        $all_students = ClassList::find_all();
+
+        echo json_encode($all_students);
+    } else if ($theRequest == "id") {
+        $id = $_GET["id"];
+        $student = ClassList::find_by_id($_GET["id"]);
+
+        echo json_encode($student);
+    }
+
+} else if (isset($_GET["attendance"])) {
+    $theRequest = $_GET["attendance"];
+    if ($theRequest == "all") {
+        $all_students = Attendance::find_all();
+
+        echo json_encode($all_students);
+    } else if ($theRequest == "id") {
+        $id = $_GET["id"];
+        $student = Attendance::find_by_id($_GET["id"]);
+
+        echo json_encode($student);
+    }
+} else if (isset($_GET["attendances"])) {
+    $theRequest = $_GET["attendances"];
+    if ($theRequest == "all") {
+        $all_students = Attendances::find_all();
+
+        echo json_encode($all_students);
+    } else if ($theRequest == "id") {
+        $id = $_GET["id"];
+        $student = Attendances::find_by_id($_GET["id"]);
+
+        echo json_encode($student);
+    }
+} 
+else {
     echo json_encode(["NO DATA POSTED" => "AT ALL"]);
 }
