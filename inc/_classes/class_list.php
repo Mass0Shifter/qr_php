@@ -33,6 +33,21 @@ class ClassList extends Database_object
     }
 
 
+    public static function find_by_id($id){
+        global $database;
+        $sql = "SELECT * FROM " . static::$db_table . " WHERE id= $id LIMIT 1";
+        $result = self::find_this_query($sql);
+
+        if(!empty($result)){
+
+            $first_item = array_shift($result);
+            $first_item->get_students();
+            return $first_item;
+        }else{
+            return false;
+        }
+        
+    }
     public static function find_all_by_lecturer_id($id)
     {
         global $database;
