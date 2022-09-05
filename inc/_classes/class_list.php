@@ -51,7 +51,8 @@ class ClassList extends Database_object
 
     public function get_students()
     {
-        $exploded = explode("," , $this->student_ids);
+        $trimmed = str_replace(" ", "", $this->student_ids);
+        $exploded = explode("," , $trimmed);
         $quoted= "";
         for ($i=0; $i < count($exploded); $i++) { 
             $matNumber = $exploded[$i];
