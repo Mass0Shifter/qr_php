@@ -29,6 +29,11 @@ class Attendances extends Database_object
     public function __construct()
     {
     }
+    
+    public function get_student()
+    {
+        $this->student = Student::find_by_id($this->student_id);
+    }
 
     public static function get_all_attendances_for_id($id)
     {
@@ -37,6 +42,9 @@ class Attendances extends Database_object
         $result = self::find_this_query($sql);
 
         if (!empty($result)) {
+            foreach ($result as $re) {
+                $re->get_student();
+            }
             return $result;
         } else {
             return false;
