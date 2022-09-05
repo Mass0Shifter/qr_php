@@ -50,7 +50,7 @@ class Student extends Database_object
 
     public static function find_by_matric_number($mat){
         global $database;
-        $sql = "SELECT * FROM " . static::$db_table . " WHERE matric_number= $mat LIMIT 1";
+        $sql = "SELECT * FROM " . static::$db_table . " WHERE matric_number='$mat' LIMIT 1";
         $result = self::find_this_query($sql);
 
         if(!empty($result)){
