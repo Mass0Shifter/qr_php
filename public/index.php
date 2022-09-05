@@ -132,6 +132,11 @@ if (isset($_POST["request"])) {
         $student = Student::find_by_matric_number($_GET["matric_number"]);
 
         echo json_encode($student);
+    } else if ($theRequest == "matric_numbers") {
+        $id = $_GET["matric_numbers"];
+        $student = Student::find_by_matric_numbers($_GET["matric_numbers"]);
+
+        echo json_encode($student);
     }
 } else if (isset($_GET["class_list"])) {
     $theRequest = $_GET["class_list"];

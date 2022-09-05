@@ -24,6 +24,7 @@ class ClassList extends Database_object
         $name                       = '',
         $course_code                = '',
         $student_ids                = '',
+        $students                    = '',
         $lecturer_id                = '',
         $date_created               = null;
 
@@ -43,6 +44,21 @@ class ClassList extends Database_object
         } else {
             return false;
         }
+    }
+
+    public function get_students()
+    {
+        $exploded = explode($this->student_ids, ",");
+        $quoted= "";
+        for ($i=0; $i < count($exploded); $i++) { 
+            $matNumber = $exploded[$i];
+            if($i == (count($exploded)-1)){
+                $quoted .= "'$matNumber'";
+            }else {
+                $quoted .= "'$matNumber',";
+            }
+        }
+        $this->students = Student::find_by_matric_numbers($quoted);
     }
 
     public static function count_for_id($id)
