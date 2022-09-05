@@ -8,14 +8,21 @@ if (isset($_POST["request"])) {
     /// Create Student Item
     if ($theRequest == "CREATE STUDENT") {
 
-        $data = json_decode($_POST["student_data"]);
+        $data = $_POST["student_data"];
+        // $data = json_decode($_POST["student_data"]);
         $new_student = new Student();
 
-        $new_student->first_name = $data->first_name;
-        $new_student->middle_name = $data->middle_name;
-        $new_student->last_name = $data->last_name;
-        $new_student->department = $data->department;
-        $new_student->matric_number = $data->matric_number;
+        $new_student->first_name = $data["first_name"];
+        $new_student->middle_name = $data["middle_name"];
+        $new_student->last_name = $data["last_name"];
+        $new_student->department = $data["department"];
+        $new_student->matric_number = $data["matric_number"];
+
+        // $new_student->first_name = $data->first_name;
+        // $new_student->middle_name = $data->middle_name;
+        // $new_student->last_name = $data->last_name;
+        // $new_student->department = $data->department;
+        // $new_student->matric_number = $data->matric_number;
         $new_student->img_src = fileUpload($_FILES['student_img'],  "");
 
         if ($new_student->create()) {
