@@ -51,7 +51,7 @@ class ClassList extends Database_object
 
     public function get_students()
     {
-        $exploded = explode($this->student_ids, ",");
+        $exploded = explode("," , $this->student_ids);
         $quoted= "";
         for ($i=0; $i < count($exploded); $i++) { 
             $matNumber = $exploded[$i];
@@ -61,8 +61,8 @@ class ClassList extends Database_object
                 $quoted .= "'$matNumber',";
             }
         }
-        var_dump($exploded);
-        // $this->students = Student::find_by_matric_numbers($quoted);
+        // var_dump($exploded);
+        $this->students = Student::find_by_matric_numbers($quoted);
     }
 
     public static function count_for_id($id)
