@@ -37,6 +37,16 @@ class Attendance extends Database_object
         $this->attendances = Attendances::get_all_attendances_for_id($this->id);
     }
 
+    public static function find_all(){
+        global $database;
+        $sql = "SELECT * FROM " .static::$db_table;
+        $result = self::find_this_query($sql);
+        foreach ($result as $at) {
+            $at->get_attendances();
+        }        
+        return $result;
+    }
+
     public static function find_all_by_user_id($id)
     {
         global $database;
