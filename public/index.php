@@ -40,13 +40,20 @@ if (isset($_POST["request"])) {
     if ($theRequest == "CREATE CLASS LIST") {
 
 
-        $data = json_decode($_POST["class_data"]);
+        // $data = json_decode($_POST["class_data"]);
         $new_class_list = new ClassList();
+        $data = $_POST["class_data"];
+        
+        $new_student->first_name = $data["first_name"];
+        $new_student->middle_name = $data["middle_name"];
+        $new_student->last_name = $data["last_name"];
+        $new_student->department = $data["department"];
+        $new_student->matric_number = $data["matric_number"];
 
-        $new_class_list->name = $data->name;
-        $new_class_list->course_code = $data->course_code;
-        $new_class_list->student_ids = $data->student_ids;
-        $new_class_list->lecturer_id = $data->lecturer_id;
+        // $new_class_list->name = $data->name;
+        // $new_class_list->course_code = $data->course_code;
+        // $new_class_list->student_ids = $data->student_ids;
+        // $new_class_list->lecturer_id = $data->lecturer_id;
         // $new_class_list->date_created = $data->date_created;
 
         if ($new_class_list->create()) {
