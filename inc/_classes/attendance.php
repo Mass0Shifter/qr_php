@@ -32,7 +32,7 @@ class Attendance extends Database_object
     }
 
 
-    public function get_attendances($id)
+    public function get_attendances()
     {
         $this->attendances = Attendances::get_all_attendances_for_id($this->id);
     }
