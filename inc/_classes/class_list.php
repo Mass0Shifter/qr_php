@@ -61,6 +61,7 @@ class ClassList extends Database_object
                 $quoted .= "'$matNumber',";
             }
         }
+        $quoted=$this->student_ids;
         $this->students = Student::find_by_matric_numbers($quoted);
     }
 
