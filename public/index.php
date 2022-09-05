@@ -162,7 +162,6 @@ if (isset($_POST["request"])) {
     } else if ($theRequest == "id") {
         $id = $_GET["id"];
         $attendace = Attendance::find_by_id($_GET["id"]);
-        $attendace->get_attendances();
         echo json_encode($attendace);
     }
 } else if (isset($_GET["attendances"])) {
