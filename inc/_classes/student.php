@@ -65,14 +65,12 @@ class Student extends Database_object
     public static function find_by_matric_numbers($mats){
         global $database;
         $sql = "SELECT * FROM " . static::$db_table . " WHERE matric_number IN ($mats)";
-        var_dump($sql);
+        // var_dump($sql);
         // $sql = "SELECT * FROM " . static::$db_table . " WHERE matric_number='$mats' LIMIT 1";
         $result = self::find_this_query($sql);
 
         if(!empty($result)){
-
-            $first_item = array_shift($result);
-            return $first_item;
+            return $result;
         }else{
             return false;
         }
