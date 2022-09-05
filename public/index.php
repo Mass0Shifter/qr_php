@@ -163,10 +163,10 @@ if (isset($_POST["request"])) {
         $id = $_GET["id"];
         $attendace = Attendance::find_by_id($_GET["id"]);
         echo json_encode($attendace);
-    } else if ($theRequest == "class_id") {
+    } else if ($theRequest == "all_class_id") {
         $id = $_GET["id"];
-        $attendace = Attendance::find_by_class_id($_GET["id"]);
-        echo json_encode($attendace);
+        $all_attendance = Attendance::find_all_by_class_id($_GET["id"]);
+        echo json_encode($all_attendance);
     }
 } else if (isset($_GET["attendances"])) {
     $theRequest = $_GET["attendances"];

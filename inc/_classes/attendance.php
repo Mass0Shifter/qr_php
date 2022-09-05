@@ -31,38 +31,57 @@ class Attendance extends Database_object
     {
     }
 
-    public static function find_by_id($id){
+    public static function find_by_id($id)
+    {
         global $database;
         $sql = "SELECT * FROM " . static::$db_table . " WHERE id= $id LIMIT 1";
         $result = self::find_this_query($sql);
 
-        if(!empty($result)){
+        if (!empty($result)) {
 
             $first_item = array_shift($result);
             $first_item->get_attendances();
             $first_item->get_class();
             return $first_item;
-        }else{
+        } else {
             return false;
         }
-        
     }
-    
-    public static function find_by_class_id($id){
+
+    public static function find_by_class_id($id)
+    {
         global $database;
         $sql = "SELECT * FROM " . static::$db_table . " WHERE class_id= $id LIMIT 1";
         $result = self::find_this_query($sql);
 
-        if(!empty($result)){
+        if (!empty($result)) {
 
             $first_item = array_shift($result);
             $first_item->get_attendances();
             $first_item->get_class();
             return $first_item;
-        }else{
+        } else {
             return false;
         }
-        
+    }
+
+    public static function find_all_by_class_id($id)
+    {
+        global $database;
+        $sql = "SELECT * FROM " . static::$db_table . " WHERE class_id= $id LIMIT 1";
+        $result = self::find_this_query($sql);
+
+        if (!empty($result)) {
+
+            foreach ($result as $re) {
+
+                $re->get_attendances();
+                $re->get_class();
+            }
+            return $result;
+        } else {
+            return false;
+        }
     }
 
 
@@ -75,14 +94,15 @@ class Attendance extends Database_object
         $this->class = ClassList::find_by_id($this->class_id);
     }
 
-    public static function find_all(){
+    public static function find_all()
+    {
         global $database;
-        $sql = "SELECT * FROM " .static::$db_table;
+        $sql = "SELECT * FROM " . static::$db_table;
         $result = self::find_this_query($sql);
         foreach ($result as $at) {
             $at->get_attendances();
             $at->get_class();
-        }        
+        }
         return $result;
     }
 
@@ -105,11 +125,9 @@ class Attendance extends Database_object
         $sql = "SELECT * FROM " . static::$db_table . " WHERE uploaded_by_id=$id AND rejected=0";
         $result = self::find_this_query($sql);
         if (!empty($result)) {
-           return count($result);
+            return count($result);
         } else {
             return "None";
         }
     }
-
-    
 }
