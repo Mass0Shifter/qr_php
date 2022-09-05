@@ -40,6 +40,9 @@ class ClassList extends Database_object
         $result = self::find_this_query($sql);
 
         if (!empty($result)) {
+            foreach ($result as $re) {
+                $re->get_students();
+            }
             return $result;
         } else {
             return false;
