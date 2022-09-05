@@ -36,6 +36,10 @@ class Attendance extends Database_object
     {
         $this->attendances = Attendances::get_all_attendances_for_id($this->id);
     }
+    public function get_class()
+    {
+        $this->class = ClassList::find_by_id($this->class_id);
+    }
 
     public static function find_all(){
         global $database;
@@ -43,6 +47,7 @@ class Attendance extends Database_object
         $result = self::find_this_query($sql);
         foreach ($result as $at) {
             $at->get_attendances();
+            $at->get_class();
         }        
         return $result;
     }
