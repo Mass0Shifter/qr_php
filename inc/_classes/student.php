@@ -62,6 +62,25 @@ class Student extends Database_object
         }
         
     }
+
+    public static function find_by_matric_number_in_attendance_class_list($mat, $atte){
+        $att = Attendance::find_by_id($atte);
+        $stu = Student::find_by_matric_number($mat);
+        
+        $inList = false;
+        foreach ($att->class->students as $student) {
+            if($student->id == $stu->id){
+                $inList = true;
+            }
+        }
+
+        if($inList){           
+            return $stu;
+        }else{
+            return false;
+        }
+    }
+
     public static function find_by_matric_numbers($mats){
         global $database;
         $sql = "SELECT * FROM " . static::$db_table . " WHERE matric_number IN ($mats)";
