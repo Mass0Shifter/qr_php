@@ -69,11 +69,12 @@ if (isset($_POST["request"])) {
 
     if ($theRequest == "CREATE ATTENDANCE") {
 
-        $data = json_decode($_POST["attendance_data"]);
+        $data = $_POST["attendance_data"];
+        // $data = json_decode($_POST["attendance_data"]);
         $new_attendance_list = new Attendance();
 
-        $new_attendance_list->class_id = $data->class_id;
-        $new_attendance_list->class_count = $data->class_count;
+        $new_attendance_list->class_id = $data['class_id'];
+        $new_attendance_list->class_count = $data['class_count'];
         // $new_attendance_list->attendances = $data->attendances;
         // $new_attendance_list->date = $data->date;
 
