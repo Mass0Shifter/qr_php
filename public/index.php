@@ -149,6 +149,12 @@ if (isset($_POST["request"])) {
         $student = Student::find_by_matric_number_in_attendance_class_list($_GET["matric_number"],$_GET["attendance_id"]);
 
         echo json_encode($student);
+    
+    } else if ($theRequest == "matric_number_and_attendance_match") {
+        // student=matric_number_and_attendance&matric_number=$studentMatNum&attendance_id=$attendanceId
+        $student = Student::find_by_matric_number_in_attendance_class_list_match($_GET["matric_number"],$_GET["attendance_id"]);
+
+        echo json_encode($student);
     }
 } else if (isset($_GET["class_list"])) {
     $theRequest = $_GET["class_list"];
