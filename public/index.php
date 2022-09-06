@@ -138,9 +138,8 @@ if (isset($_POST["request"])) {
 
         echo json_encode($student);
     
-    } else if ($theRequest == "matric_numbers") {
+    } else if ($theRequest == "matric_number_and_attendance") {
         // student=matric_number_and_attendance&matric_number=$studentMatNum&attendance_id=$attendanceId
-        $id = $_GET["matric_numbers"];
         $student = Student::find_by_matric_number_in_attendance_class_list($_GET["matric_number"],$_GET["attendance_id"]);
 
         echo json_encode($student);
