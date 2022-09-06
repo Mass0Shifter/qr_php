@@ -91,15 +91,21 @@ if (isset($_POST["request"])) {
 
     if ($theRequest == "CREATE ATTENDANCES") {
 
-        $data = json_decode($_POST["attendances_data"]);
+        // $data = json_decode($_POST["attendances_data"]);
+        $data = $_POST["attendances_data"];
         $ids = [];
         // for ($i=0; $i < $_POST["attendances_count"]; $i++) { 
         for ($i = 0; $i < count($data); $i++) {
             $new_attendances_list = new Attendances();
 
-            $new_attendances_list->attendance_list_id = $data[$i]->attendance_list_id;
-            $new_attendances_list->student_id = $data[$i]->student_id;
-            $new_attendances_list->time_record = $data[$i]->time_record;
+            $new_attendances_list->attendance_list_id = $data[$i]['attendance_list_id'];
+            $new_attendances_list->student_id = $data[$i]['student_id'];
+            $new_attendances_list->student_matric = $data[$i]['student_matric'];
+            $new_attendances_list->time_record = $data[$i]['time_record'];
+            // $new_attendances_list->attendance_list_id = $data[$i]->attendance_list_id;
+            // $new_attendances_list->student_id = $data[$i]->student_id;
+            // $new_attendances_list->student_id = $data[$i]->student_id;
+            // $new_attendances_list->time_record = $data[$i]->time_record;
 
             $new_attendances_list->create();
 

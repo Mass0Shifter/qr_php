@@ -17,19 +17,20 @@ class Attendances extends Database_object
 
     protected static $db_table = "attendances";
     protected static $db_table_fields = array(
-        'attendance_list_id', 'student_id', 'time_record'
+        'attendance_list_id', 'student_id', 'student_matric', 'time_record'
     );
 
     public $id                      = null,
         $attendance_list_id         = '',
         $student_id                 = '',
+        $student_matric                 = '',
         $student                    = '',
         $time_record                = null;
 
     public function __construct()
     {
     }
-    
+
     public function get_student()
     {
         $this->student = Student::find_by_id($this->student_id);
@@ -57,11 +58,9 @@ class Attendances extends Database_object
         $sql = "SELECT * FROM " . static::$db_table . " WHERE uploaded_by_id=$id AND rejected=0";
         $result = self::find_this_query($sql);
         if (!empty($result)) {
-           return count($result);
+            return count($result);
         } else {
             return "None";
         }
     }
-
-    
 }
