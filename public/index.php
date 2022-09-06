@@ -97,7 +97,7 @@ if (isset($_POST["request"])) {
         // for ($i=0; $i < $_POST["attendances_count"]; $i++) { 
         for ($i = 0; $i < count($data); $i++) {
             $new_attendances_list = new Attendances();
-            var_dump($data);
+            // var_dump($data);
             $new_attendances_list->attendance_list_id = $data[$i]['attendance_list_id'];
             $new_attendances_list->student_id = $data[$i]['student_id'];
             $new_attendances_list->student_matric = $data[$i]['student_matric'];
