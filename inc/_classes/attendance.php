@@ -68,7 +68,7 @@ class Attendance extends Database_object
     public static function find_all_by_class_id($id)
     {
         global $database;
-        $sql = "SELECT * FROM " . static::$db_table . " WHERE class_id= $id LIMIT 1";
+        $sql = "SELECT * FROM " . static::$db_table . " WHERE class_id=$id";
         $result = self::find_this_query($sql);
 
         if (!empty($result)) {
