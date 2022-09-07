@@ -163,6 +163,17 @@ if (isset($_POST["request"])) {
         $all_classes = ClassList::find_all_by_lecturer_id($_GET["lecturer_id"]);
 
         echo json_encode($all_classes);
+    } else if ($theRequest == "id" & $_GET["action"] == "delete") {
+        $id = $_GET["id"];
+        $class = ClassList::find_by_id($_GET["id"]);
+        $class->delete();
+
+        echo json_encode( [
+            "response" => "CLASS DELETED FROM DATABASE",
+            "data" => [
+                "id" => $id
+            ]
+        ]);
     } else if ($theRequest == "id") {
         $id = $_GET["id"];
         $class = ClassList::find_by_id($_GET["id"]);

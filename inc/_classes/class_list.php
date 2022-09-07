@@ -32,6 +32,26 @@ class ClassList extends Database_object
     {
     }
 
+    public function delete(){
+        $all_att = Attendance::find_all_by_class_id($this->id);
+        foreach ($all_att as $att) {
+            $att->delete();
+        }
+
+        global $database;
+
+        $sql = "DELETE FROM " . static::$db_table ;
+        $sql .= " WHERE id=". $database->escape_string($this->id);
+        $sql .= " LIMIT 1";
+
+        if($database->query($sql)){
+            return ($database->affected_rows() == 1) ? true : false;
+        }else{
+            return false;
+        }
+    }
+
+
 
     public static function find_by_id($id){
         global $database;

@@ -24,11 +24,33 @@ class Attendance extends Database_object
         $class_id                   = '',
         $class                      = '',
         $class_count                = '',
-        $attendances                = '',
+        $attendances                = null,
         $date                       = null;
 
     public function __construct()
     {
+    }
+
+    public function delete(){
+        if($this->attendances == null || !isset($this->attendances)){
+            $this->get_attendances();
+        }
+
+        foreach ($this->attendances as $at_record) {
+            $at_record->delete();
+        }
+
+        global $database;
+
+        $sql = "DELETE FROM " . static::$db_table ;
+        $sql .= " WHERE id=". $database->escape_string($this->id);
+        $sql .= " LIMIT 1";
+
+        if($database->query($sql)){
+            return ($database->affected_rows() == 1) ? true : false;
+        }else{
+            return false;
+        }
     }
 
     public static function find_by_id($id)
