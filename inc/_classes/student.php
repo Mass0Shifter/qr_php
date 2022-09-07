@@ -37,7 +37,7 @@ class Student extends Database_object
 
     public static function find_all_by_user_id($id)
     {
-        global $database;
+        
         $sql = "SELECT * FROM " . static::$db_table . " WHERE uploaded_by_id=$id";
         $result = self::find_this_query($sql);
 
@@ -49,7 +49,7 @@ class Student extends Database_object
     }
 
     public static function find_by_matric_number($mat){
-        global $database;
+        
         $sql = "SELECT * FROM " . static::$db_table . " WHERE matric_number='$mat' LIMIT 1";
         $result = self::find_this_query($sql);
 
@@ -100,7 +100,7 @@ class Student extends Database_object
     }
 
     public static function find_by_matric_numbers($mats){
-        global $database;
+        
         $sql = "SELECT * FROM " . static::$db_table . " WHERE matric_number IN ($mats)";
         // var_dump($sql);
         // $sql = "SELECT * FROM " . static::$db_table . " WHERE matric_number='$mats' LIMIT 1";
@@ -116,7 +116,7 @@ class Student extends Database_object
 
     public static function count_for_id($id)
     {
-        global $database;
+        
         $sql = "SELECT * FROM " . static::$db_table . " WHERE uploaded_by_id=$id AND rejected=0";
         $result = self::find_this_query($sql);
         if (!empty($result)) {

@@ -83,6 +83,6 @@
 
     }
 
-    $database = new Database();
+    $GLOBALS['daataabase'] = new Database();
     
 ?>

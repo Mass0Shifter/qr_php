@@ -42,20 +42,20 @@ class Database_object{
     }
 
     protected function clean_properties(){
-        global $database;
+        
 
         $clean_properties = array();
         foreach($this->properties() as $key=>$value){
-            $clean_properties[$key] = $database->escape_string($value);
+            $clean_properties[$key] = $GLOBALS['daataabase']->escape_string($value);
         }
 
         return $clean_properties;
     }
 
     public function date_created($id){
-        global $database;
+        
         $sql = "SELECT date_created FROM " . static::$db_table . " WHERE id= $id LIMIT 1";
-        $result = $database->fetch_a($database->query($sql));
+        $result = $GLOBALS['daataabase']->fetch_a($GLOBALS['daataabase']->query($sql));
 
         if(!empty($result)){
             return $result['date_created'];
@@ -65,14 +65,14 @@ class Database_object{
     }
 
     public static function find_all(){
-        global $database;
+        
         $sql = "SELECT * FROM " .static::$db_table;
         $result = self::find_this_query($sql);
         return $result;
     }
 
     public static function find_by_id($id){
-        global $database;
+        
         $sql = "SELECT * FROM " . static::$db_table . " WHERE id= $id LIMIT 1";
         $result = self::find_this_query($sql);
 
@@ -87,11 +87,11 @@ class Database_object{
     }
 
     public static function find_this_query($sql){
-        global $database;
-        $result = $database->query($sql);
+        
+        $result = $GLOBALS['daataabase']->query($sql);
         $object_array = array();
 
-        while($row = $database->fetch_a($result) ){
+        while($row = $GLOBALS['daataabase']->fetch_a($result) ){
             $object_array[] = self::instatiate($row);
         }
 
@@ -103,16 +103,16 @@ class Database_object{
     }
 
     public function create(){
-        global $database;
+        
 
         $properties = $this->clean_properties();
 
         $sql = " INSERT INTO " . static::$db_table . " (" . implode(",", array_keys($properties)). ") ";
         $sql .= "VALUES ('" . implode("','", array_values($properties)) ."')";
-        if($database->query($sql)){
-            // $this->id = $database->the_insert_id();
+        if($GLOBALS['daataabase']->query($sql)){
+            // $this->id = $GLOBALS['daataabase']->the_insert_id();
             // return true;
-            return $this->id = $database->the_insert_id();
+            return $this->id = $GLOBALS['daataabase']->the_insert_id();
         }else{
             return false;            
         }
@@ -120,7 +120,7 @@ class Database_object{
     
     
     public function show_all(){
-        global $database;
+        
 
         $properties = $this->clean_properties();
         
@@ -136,7 +136,7 @@ class Database_object{
 
     
     public function update(){
-        global $database;
+        
 
         $properties = $this->clean_properties();
         
@@ -148,10 +148,10 @@ class Database_object{
 
         $sql = " UPDATE " . static::$db_table . " SET ";
         $sql .= implode(", ", $properties_pairs);
-        $sql .= " WHERE id=" . $database->escape_string($this->id);
+        $sql .= " WHERE id=" . $GLOBALS['daataabase']->escape_string($this->id);
 
-        if($database->query($sql)){
-            return ($database->affected_rows() == 1) ? true : false;
+        if($GLOBALS['daataabase']->query($sql)){
+            return ($GLOBALS['daataabase']->affected_rows() == 1) ? true : false;
         }else{
             return false;
         }
@@ -159,22 +159,22 @@ class Database_object{
 
     
     public function delete(){
-        global $database;
+        
 
         $sql = "DELETE FROM " . static::$db_table ;
-        $sql .= " WHERE id=". $database->escape_string($this->id);
+        $sql .= " WHERE id=". $GLOBALS['daataabase']->escape_string($this->id);
         $sql .= " LIMIT 1";
 
-        if($database->query($sql)){
-            return ($database->affected_rows() == 1) ? true : false;
+        if($GLOBALS['daataabase']->query($sql)){
+            return ($GLOBALS['daataabase']->affected_rows() == 1) ? true : false;
         }else{
             return false;
         }
     }
 
     public static function verify_id($id){
-        global $database;
-        $id = $database->escape_string($id);
+        
+        $id = $GLOBALS['daataabase']->escape_string($id);
         $sql = "SELECT * FROM " . static::$db_table . " WHERE ";
         $sql .= "id= '{$id}' ";
         $sql .= "LIMIT 1";

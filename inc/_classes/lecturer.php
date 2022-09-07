@@ -58,20 +58,19 @@ class Lecturer extends Database_object{
     }
 
     protected function clean_properties(){
-        global $database;
 
         $clean_properties = array();
         foreach($this->properties() as $key=>$value){
-            $clean_properties[$key] = $database->escape_string($value);
+            $clean_properties[$key] = $GLOBALS['daataabase']->escape_string($value);
         }
 
         return $clean_properties;
     }   
 
     public static function verify_user($username, $password){
-        global $database;
-        $username = $database->escape_string($username);
-        $password = $database->escape_string($password);
+       
+        $username = $GLOBALS['daataabase']->escape_string($username);
+        $password = $GLOBALS['daataabase']->escape_string($password);
         $sql = "SELECT * FROM " . self::$db_table . " WHERE ";
         $sql .= "username= '{$username}' ";
         $sql .= "AND password= '{$password}' ";

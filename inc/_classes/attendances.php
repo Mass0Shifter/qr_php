@@ -38,7 +38,7 @@ class Attendances extends Database_object
 
     public static function get_all_attendances_for_id($id)
     {
-        global $database;
+        
         $sql = "SELECT * FROM " . static::$db_table . " WHERE attendance_list_id=$id ORDER BY time_record ASC";
         $result = self::find_this_query($sql);
 
@@ -54,7 +54,7 @@ class Attendances extends Database_object
 
     public static function count_for_id($id)
     {
-        global $database;
+        
         $sql = "SELECT * FROM " . static::$db_table . " WHERE uploaded_by_id=$id AND rejected=0";
         $result = self::find_this_query($sql);
         if (!empty($result)) {

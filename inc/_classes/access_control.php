@@ -34,7 +34,7 @@ class AccessControl extends Database_object{
     }
 
     public static function find_by_page_name($name){
-        global $database;
+        
         $sql = "SELECT * FROM " . static::$db_table . " WHERE page_name='$name' LIMIT 1";
         $result = self::find_this_query($sql);
 

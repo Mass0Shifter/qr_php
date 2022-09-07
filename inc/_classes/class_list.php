@@ -38,14 +38,12 @@ class ClassList extends Database_object
             $att->delete();
         }
 
-        global $database;
-
         $sql = "DELETE FROM " . static::$db_table ;
-        $sql .= " WHERE id=". $database->escape_string($this->id);
+        $sql .= " WHERE id=". $GLOBALS['daataabase']->escape_string($this->id);
         $sql .= " LIMIT 1";
 
-        if($database->query($sql)){
-            return ($database->affected_rows() == 1) ? true : false;
+        if($GLOBALS['daataabase']->query($sql)){
+            return ($GLOBALS['daataabase']->affected_rows() == 1) ? true : false;
         }else{
             return false;
         }
@@ -54,7 +52,7 @@ class ClassList extends Database_object
 
 
     public static function find_by_id($id){
-        global $database;
+       
         $sql = "SELECT * FROM " . static::$db_table . " WHERE id= $id LIMIT 1";
         $result = self::find_this_query($sql);
 
@@ -70,7 +68,6 @@ class ClassList extends Database_object
     }
     public static function find_all_by_lecturer_id($id)
     {
-        global $database;
         $sql = "SELECT * FROM " . static::$db_table . " WHERE lecturer_id=$id";
         $result = self::find_this_query($sql);
 
@@ -103,7 +100,6 @@ class ClassList extends Database_object
 
     public static function count_for_id($id)
     {
-        global $database;
         $sql = "SELECT * FROM " . static::$db_table . " WHERE uploaded_by_id=$id AND rejected=0";
         $result = self::find_this_query($sql);
         if (!empty($result)) {
