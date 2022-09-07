@@ -189,6 +189,19 @@ if (isset($_POST["request"])) {
         }
 
         echo json_encode($all_attendance);
+    } else if ($theRequest == "id" & $_GET["action"] == "delete") {
+        //SADASD
+        $id = $_GET["id"];
+        $attendace = Attendance::find_by_id($_GET["id"]);
+
+        $attendace->delete();
+        echo json_encode([
+            "response" => "ATTENDANCE RECORDS DELETED FROM DATABASE",
+            "data" => [
+                "id" => $id
+            ]
+        ]);
+    
     } else if ($theRequest == "id") {
         $id = $_GET["id"];
         $attendace = Attendance::find_by_id($_GET["id"]);
