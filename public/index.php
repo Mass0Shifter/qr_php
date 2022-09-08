@@ -248,3 +248,5 @@ if (isset($_POST["request"])) {
 } else {
     echo json_encode(["NO DATA POSTED" => "AT ALL"]);
 }
+
+$GLOBALS['daataabase']->disconnect();
