@@ -124,6 +124,13 @@ class Attendance extends Database_object
         return $result;
     }
 
+    public static function find_all_data()
+    {
+        $sql = "SELECT * FROM " . static::$db_table;
+        $result = self::find_this_query($sql);
+        return $result;
+    }
+
     public static function find_all_by_user_id($id)
     {
         $sql = "SELECT * FROM " . static::$db_table . " WHERE uploaded_by_id=$id";

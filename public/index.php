@@ -223,6 +223,30 @@ if (isset($_POST["request"])) {
 
         echo json_encode($student);
     }
+} else if (isset($_GET["all_data"])) {
+    // GET ALL THE DATA FOR THE APP
+    $theRequest = $_GET["all_data"];
+    if ($theRequest == "all") {
+        $all_students = Student::find_all();
+        $all_classes = ClassList::find_all();
+        $all_attendance = Attendance::find_all_data();
+        $all_attendances = Attendances::find_all();
+
+        $all_data = [
+            "response" => "ALL DATABASE",
+            "students" => $all_students,
+            "classes" => $all_classes,
+            "attendance_all" => $all_attendance,
+            "attendances_all" => $all_attendances
+        ];
+
+        echo json_encode($all_data);
+    } else if ($theRequest == "id") {
+        $id = $_GET["id"];
+        $student = Attendances::find_by_id($_GET["id"]);
+
+        echo json_encode($student);
+    }
 } else if (isset($_POST["login"])) {
 
     $username = trim($_POST['login-username']);
