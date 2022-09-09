@@ -82,9 +82,7 @@ if (isset($_POST["request"])) {
             echo json_encode(
                 [
                     "response" => "ATTENDANCE ADDED TO DATABASE",
-                    "data" => [
-                        "id" => $new_attendance_list->id
-                    ]
+                    "data" => $new_attendance_list
                 ]
             );
         }
